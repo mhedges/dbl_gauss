@@ -15,11 +15,11 @@ int main() {
   }
   
   /* Serial fit */
-  auto f1 = new TF1("f1", "gaus");
+  //auto f1 = new TF1("f1", "gaus");
 
   /* Vectorized fit */
-  //auto f1 = new TF1("f1", "gaus", -5, 5, "VEC");
-  f1->SetNpx(sizeof(pts)+10);
+  auto f1 = new TF1("f1", "gaus", -5, 5, "VEC");
+  //f1->SetNpx(128+10);
   h1->Fit(f1);
   std::cout << "It worked!" << std::endl;
   return 0;
